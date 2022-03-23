@@ -6,7 +6,7 @@ import com.diogonunes.jcolor.*;
 
 class Main {
   public static void main(String[] args) throws Throwable {
-    BufferedImage img = ImageIO.read(new File("rainbow.jpg"));
+    BufferedImage img = ImageIO.read(new File("image.jpg"));
     for(int y = 0; y < img.getHeight(); y+= 10) {
       for(int x = 0; x < img.getWidth(); x+=5) {
         Color col = new Color(img.getRGB(x, y));
