@@ -9,7 +9,7 @@ class Main {
     for (int y = 0; y < img.getHeight(); y += 10) {
       for (int x = 0; x < img.getWidth(); x += 5) {
         Color col = new Color(img.getRGB(x, y));
-        Color col2 = new Color(img.getRGB(x, y + 1));
+        Color col2 = new Color(img.getRGB(x, y + 5));
 
         drawPixel(col, col2);
       }
@@ -21,7 +21,11 @@ class Main {
             Attribute.TEXT_COLOR(col2.getRed(), col2.getGreen(), col2.getBlue())));
   }
   public static void main(String[] args) throws Throwable {
-    BufferedImage img = ImageIO.read(new File("image.jpg"));
+    BufferedImage img;
+    if(args.length == 0)
+      img = ImageIO.read(new File("image.jpg"));
+    else
+      img = ImageIO.read(new File(args[0]));
     drawImage(img);
   }
 }
